@@ -34,7 +34,7 @@ public class Ejercicio08 {
         
         sc.unirFrase(c, "tiene cabeza y tiene cola");
         
-        sc.reemplazar(c, "X");
+        System.out.println(sc.reemplazar(c, "X"));
         
         System.out.println("Contiene la letra??"+sc.contiene(c));
     }

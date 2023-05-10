@@ -33,7 +33,9 @@ public class ServicioMatematica {
     public double calclarPotencia(Matematica m){
         int numMay=(int)((m.getNum1()>m.getNum2()) ? m.getNum1() : m.getNum2());
         int numMen=(int)((m.getNum1()<m.getNum2()) ? m.getNum1() : m.getNum2());
-        return Math.pow((double) numMay, (double) numMen);
+        //int numMay=Math.max((float) m.getNum1(),(float) m.getNum2());
+        //int numMen=Math.min((float) m.getNum1(),(float) m.getNum2());
+        return Math.pow( Math.abs(numMay), Math.abs(numMen));
     } 
     
     public float calcularRaiz(Matematica m){

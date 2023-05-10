@@ -106,17 +106,19 @@ con una nueva frase ingresada por el usuario y mostrar la frase resultante.
 encuentren en la frase, por algún otro carácter seleccionado por el usuario y mostrar
 la frase resultante.
      */
-    public void reemplazar(Cadena c, String l) {
-        String letra;
-        for (int i = 0; i < c.getFrase().length(); i++) {
-            letra = c.getFrase().substring(i, i + 1).toUpperCase();
-            if ("A".equals(letra)) {
-                System.out.print(l);
-            } else {
-                System.out.print(c.getFrase().substring(i, i + 1));
+    public String reemplazar(Cadena c, String l) {
+        
+        String frase="";
+
+        for (int i = 0; i < c.getLongitud(); i++) {
+            if ("A".equals(c.getFrase().substring(i,i+1).toUpperCase())){
+                frase=frase+l;
+            }else{
+                frase=frase+c.getFrase().substring(i,i+1);
             }
+            
         }
-        System.out.println("");
+      return frase;  
     }
 
     /*
@@ -126,14 +128,6 @@ ingresa el usuario y devuelve verdadero si la contiene y falso si no.
     public boolean contiene(Cadena c) {
         System.out.println("Inrese una letra");
         String l = leer.nextLine();
-        String letra;
-        int cont = 0;
-        for (int i = 0; i < c.getFrase().length(); i++) {
-            letra = c.getFrase().substring(i, i + 1).toUpperCase();
-            if (l.toUpperCase().equals(letra)) {
-                cont++;
-            }
-        }
-        return cont != 0;
+        return c.getFrase().contains(l);
     }
 }

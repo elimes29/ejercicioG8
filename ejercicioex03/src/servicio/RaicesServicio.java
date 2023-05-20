@@ -82,7 +82,7 @@ public class RaicesServicio {
     public void obtenerRaiz(Raices r) {
         double dis = getDiscriminante(r);
         if (tieneRaiz(dis)) {
-            System.out.println("La solución única solución es: " + ((-r.getB()) / 2));
+            System.out.println("La solución única solución es: " + ((-r.getB()) / (2*r.getA())));
         } else {
             System.out.println("No hay una sola solución");
         }
